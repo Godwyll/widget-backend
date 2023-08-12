@@ -6,7 +6,7 @@ POP-UP BEHAVIOUR
 - - Track User IP
 
 # MODELS
-- Content 
-- Question 
-- Option 
-- Answer 
+- Content M C S
+- Question M C S
+- Option M C S
+- Answer M C S

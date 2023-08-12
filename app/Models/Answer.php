@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
 
 class Answer extends Model
@@ -17,5 +18,23 @@ class Answer extends Model
     protected $fillable = [
         'question_id', 'option_id', 'body', 'session_id'
     ];
+
+    /**
+     * Model Relationships.
+     */
+    public function question(): BelongsTo
+    {
+        return $this->belongsTo(Question::class);
+    }
+
+    public function option(): BelongsTo
+    {
+        return $this->belongsTo(Option::class);
+    }
+
+    public function session(): BelongsTo
+    {
+        return $this->belongsTo(Session::class);
+    }
 
 }

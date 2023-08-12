@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('question_id')->constrained();
             $table->foreignId('option_id')->nullable()->constrained();
             $table->text('body')->nullable();
-            $table->unsignedBigInteger('session_id');
+            $table->foreignId('session_id')->constrained();
             $table->timestamps();
         });
     }
