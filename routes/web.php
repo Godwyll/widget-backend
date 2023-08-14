@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\{
+    ContentController, QuestionController, SessionController,
+    OptionController, AnswerController
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +23,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware('auth')->group(function () {
+
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    Route::resources([
+        'contents' => ContentController::class,
+        'questions' => QuestionController::class,
+        'sessions' => SessionController::class,
+        'options' => OptionController::class,
+        'answers' => AnswerController::class,
+    ]);
+
+});
