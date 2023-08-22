@@ -13,9 +13,14 @@ class SessionSeeder extends Seeder
      */
     public function run(): void
     {
-        $answers = [
+        $sessions = [
             ['ip_address' => '127.0.0.1'],
             ['ip_address' => '127.0.0.1'],
         ];
+
+        foreach ($sessions as $session) {
+            session::create($session);
+        }
+
     }
 }
