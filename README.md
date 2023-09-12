@@ -10,3 +10,11 @@ POP-UP BEHAVIOUR
 - Question M C S
 - Option M C S
 - Answer M C S
+
+# RENDERING HTML 
+- For Tips & Survey
+- Generating dynamic form submission
+
+# DASHBOARD
+- Setting up Tips & Survey
+- Viewing responses & analytics

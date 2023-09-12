@@ -14,12 +14,14 @@ class QuestionSeeder extends Seeder
     public function run(): void
     {
         $questions = [
+            // Computer Security Survey
             ['user_id' => 1, 'content_id' => 7, 'body' => 'Have you ever experienced a cyber attack?', 'answer_type' => 'option', 'sort_order' => 1],
             ['user_id' => 1, 'content_id' => 7, 'body' => 'Do you save your passwords on your web browser?', 'answer_type' => 'option', 'sort_order' => 2],
             ['user_id' => 1, 'content_id' => 7, 'body' => 'Are you familiar with the authenticators and 2-step verifications? If so, do you use them?', 'answer_type' => 'text', 'sort_order' => 3],
             ['user_id' => 1, 'content_id' => 7, 'body' => 'What do you do when you receive an email with a link or document?', 'answer_type' => 'option', 'sort_order' => 4],
             ['user_id' => 1, 'content_id' => 7, 'body' => 'What would be your first approach if you sense a security breach?', 'answer_type' => 'option', 'sort_order' => 5],
 
+            // Cyber Attack Awareness Survey
             ['user_id' => 1, 'content_id' => 8, 'body' => 'Who is responsible for installing and maintaining security software on your computer?', 'answer_type' => 'option', 'sort_order' => 1],
             ['user_id' => 1, 'content_id' => 8, 'body' => 'How often do you use Windows Update?', 'answer_type' => 'option', 'sort_order' => 2],
             ['user_id' => 1, 'content_id' => 8, 'body' => 'Do you have anti-virus software installed on your computer?', 'answer_type' => 'option', 'sort_order' => 3],
