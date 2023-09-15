@@ -18,6 +18,7 @@ class ContentResource extends JsonResource
             'type' => $this->type,
             'title' => $this->title,
             'body' => $this->body,
+            'html' => $this->title,
             'questions' => QuestionResource::collection($this->questions),
         ];
     }

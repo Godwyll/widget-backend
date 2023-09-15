@@ -17,7 +17,8 @@ class ContentController extends Controller
     public function index()
     {
         $content = Content::where('is_active', 1)->get()->random();
-        return response(new ContentResource($content), 200);
+        // $content = Content::find(7);
+        return response(view('content', compact('content')), 200);
     }
 
 }
