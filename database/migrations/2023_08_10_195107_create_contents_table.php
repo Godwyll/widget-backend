@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
             $table->enum('type', ['tip', 'survey']);
             $table->string('title');
             $table->text('body')->nullable();
             $table->boolean('is_active')->default(1);
+            $table->foreignId('created_by')->constrained('users');
             $table->timestamps();
         });
     }

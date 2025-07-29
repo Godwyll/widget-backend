@@ -16,7 +16,7 @@ class Option extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'user_id', 'question_id', 'label'
+        'created_by', 'question_id', 'label'
     ];
 
     /**

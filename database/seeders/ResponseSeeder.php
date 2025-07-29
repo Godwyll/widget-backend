@@ -4,16 +4,16 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Answer;
+use App\Models\Response;
 
-class AnswerSeeder extends Seeder
+class ResponseSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $answers = [
+        $response = [
             // Have you ever experienced a cyber attack?
             ['question_id' => 1, 'session_id' => 1, 'option_id' => 1],
             ['question_id' => 1, 'session_id' => 2, 'option_id' => 2],
@@ -55,8 +55,8 @@ class AnswerSeeder extends Seeder
             ['question_id' => 10, 'session_id' => 2, 'option_id' => 2],
         ];
 
-        foreach ($answers as $answer) {
-            Answer::create($answer);
+        foreach ($response as $response) {
+            Response::create($response);
         }
 
     }

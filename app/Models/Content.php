@@ -16,7 +16,7 @@ class Content extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'user_id', 'type', 'title', 'body', 'is_active'
+        'created_by', 'type', 'title', 'body', 'is_active'
     ];
 
     /**

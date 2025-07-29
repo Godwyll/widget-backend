@@ -14,14 +14,14 @@ class ContentSeeder extends Seeder
     public function run(): void
     {
         $contents = [
-            ['user_id' => 1, 'type' => 'tip', 'title' => 'Safeguard Passwords', 'body' => 'Use a strong password for each account. Enable two-factor authentication when available.'],
-            ['user_id' => 1, 'type' => 'tip', 'title' => 'Exercise Caution with Suspicious Messages', 'body' => 'Be wary of phishing attempts. Avoid clicking links or downloading attachments from unknown sources.'],
-            ['user_id' => 1, 'type' => 'tip', 'title' => 'Reduce Public Wi-Fi Usage for Secure Activities', 'body' => 'Public Wi-Fi networks can be tempting to use but they could be vulnerable. Thus using antivirus software or limiting their usage for sensitive tasks like e-banking is advisable.'],
-            ['user_id' => 1, 'type' => 'tip', 'title' => 'Practice Discretion in Social Media Sharing', 'body' => 'Be mindful of what you share on social media. Also, adjust privacy settings to control the visibility of personal content.'],
-            ['user_id' => 1, 'type' => 'tip', 'title' => 'Maintain Updated Apps and Software', 'body' => 'Keep your devices, applications, and software current. Doing this ensures you enjoy the latest security patches and bug fixes.'],
-            ['user_id' => 1, 'type' => 'tip', 'title' => 'Safeguard Your Personal Information', 'body' => 'Be cautious about sharing sensitive information online. Provide data only on secure, reputable websites.'],
-            ['user_id' => 1, 'type' => 'survey', 'title' => 'Computer Security Survey'],
-            ['user_id' => 1, 'type' => 'survey', 'title' => 'Cyber Attack Awareness Survey'],
+            ['created_by' => 1, 'type' => 'tip', 'title' => 'Safeguard Passwords', 'body' => 'Use a strong password for each account. Enable two-factor authentication when available.'],
+            ['created_by' => 1, 'type' => 'tip', 'title' => 'Exercise Caution with Suspicious Messages', 'body' => 'Be wary of phishing attempts. Avoid clicking links or downloading attachments from unknown sources.'],
+            ['created_by' => 1, 'type' => 'tip', 'title' => 'Reduce Public Wi-Fi Usage for Secure Activities', 'body' => 'Public Wi-Fi networks can be tempting to use but they could be vulnerable. Thus using antivirus software or limiting their usage for sensitive tasks like e-banking is advisable.'],
+            ['created_by' => 1, 'type' => 'tip', 'title' => 'Practice Discretion in Social Media Sharing', 'body' => 'Be mindful of what you share on social media. Also, adjust privacy settings to control the visibility of personal content.'],
+            ['created_by' => 1, 'type' => 'tip', 'title' => 'Maintain Updated Apps and Software', 'body' => 'Keep your devices, applications, and software current. Doing this ensures you enjoy the latest security patches and bug fixes.'],
+            ['created_by' => 1, 'type' => 'tip', 'title' => 'Safeguard Your Personal Information', 'body' => 'Be cautious about sharing sensitive information online. Provide data only on secure, reputable websites.'],
+            ['created_by' => 1, 'type' => 'survey', 'title' => 'Computer Security Survey'],
+            ['created_by' => 1, 'type' => 'survey', 'title' => 'Cyber Attack Awareness Survey'],
         ];
 
         foreach ($contents as $content) {

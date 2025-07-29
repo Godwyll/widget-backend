@@ -16,7 +16,7 @@ class Question extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'user_id', 'content_id', 'answer_type', 'body'
+        'created_by', 'content_id', 'answer_type', 'body'
     ];
 
     /**

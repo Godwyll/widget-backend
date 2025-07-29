@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('options', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
             $table->foreignId('question_id')->constrained();
             $table->text('label');
+            $table->foreignId('created_by')->constrained('users');
             $table->timestamps();
         });
     }

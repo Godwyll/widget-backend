@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('answers', function (Blueprint $table) {
+        Schema::create('responses', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('session_id')->constrained();
             $table->foreignId('question_id')->constrained();
             $table->foreignId('option_id')->nullable()->constrained();
             $table->text('body')->nullable();
-            $table->foreignId('session_id')->constrained();
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('answers');
+        Schema::dropIfExists('responses');
     }
 };
