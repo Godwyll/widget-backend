@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-class AnswerRequest extends BaseFormRequest
+class ResponseRequest extends BaseFormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -42,7 +42,7 @@ class AnswerRequest extends BaseFormRequest
     public function delete(): array
     {
         return [
-            'id' => 'required|integer|exists:answers,id'
+            'id' => 'required|integer|exists:responses,id'
         ];
     }
 }
