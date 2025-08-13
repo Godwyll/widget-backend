@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('content_id')->constrained();
             $table->text('body');
-            $table->enum('answer_type', ['option', 'text']);
+            $table->enum('response_type', ['option', 'text']);
             $table->integer('sort_order')->nullable();
             $table->foreignId('created_by')->constrained('users');
             $table->timestamps();

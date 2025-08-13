@@ -6,7 +6,7 @@
         @if ($content->type == 'survey')
             @foreach ($content->questions as $question)
                 <label for="question">{{ $question->body }}</label><br/>
-                @if ($question->answer_type == 'option')
+                @if ($question->response_type == 'option')
                     @foreach ($question->options as $option)
                         <div class="option">
                             <input type="radio" name="option[{{ $question->id }}]" id="option{{$option->id}}">

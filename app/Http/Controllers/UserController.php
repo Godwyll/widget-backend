@@ -33,7 +33,6 @@ class UserController extends Controller
     {
         $data = $request->validated();
 
-        // Hash the password before saving
         if (isset($data['password'])) {
             $data['password'] = Hash::make($data['password']);
         }
@@ -64,7 +63,6 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $data = $request->validated();
 
-        // Hash the password if it's being updated
         if (isset($data['password'])) {
             $data['password'] = Hash::make($data['password']);
         } else {
@@ -92,16 +90,6 @@ class UserController extends Controller
         ]);
 
         $user = User::findOrFail($id);
-
-        // If the authenticated user is deleting their own account, log them out
-        if ($request->user() && $request->user()->id === $user->id) {
-            Auth::logout();
-            $user->delete();
-            $request->session()->invalidate();
-            $request->session()->regenerateToken();
-            return Redirect::to('/');
-        }
-
         $user->delete();
 
         return Redirect::route('users.index')->with('status', 'User deleted successfully.');

@@ -22,9 +22,9 @@ class Content extends Model
     /**
      * Model Relationships.
      */
-    public function user(): BelongsTo
+    public function createdBy(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'created_by');
     }
 
     public function questions(): HasMany

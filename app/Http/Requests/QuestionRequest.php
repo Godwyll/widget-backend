@@ -15,7 +15,7 @@ class QuestionRequest extends BaseFormRequest
             'user_id' => 'required|integer|exists:users,id',
             'content_id' => 'required|integer|exists:contents,id',
             'body' => 'required|string',
-            'answer_type' => 'required|string',
+            'response_type' => 'required|string',
             'is_active' => 'bool',
             'sort_order' => 'nullable|integer',
         ];
@@ -32,7 +32,7 @@ class QuestionRequest extends BaseFormRequest
             'user_id' => 'required|integer|exists:users,id',
             'content_id' => 'required|integer|exists:contents,id',
             'body' => 'required|string',
-            'answer_type' => 'required|string',
+            'response_type' => 'required|string',
             'is_active' => 'bool',
             'sort_order' => 'nullable|integer',
         ];

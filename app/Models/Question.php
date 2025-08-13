@@ -16,15 +16,15 @@ class Question extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'created_by', 'content_id', 'answer_type', 'body'
+        'created_by', 'content_id', 'response_type', 'body'
     ];
 
     /**
      * Model Relationships.
      */
-    public function user(): BelongsTo
+    public function createdBy(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'created_by');
     }
 
     public function content(): BelongsTo
