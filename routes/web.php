@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ContentController;
 use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -30,8 +31,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::delete('profile', 'destroy')->name('profile.destroy');
     });
 
-    // User management routes (refactored)
+    // User management routes
     Route::resource('users', UserController::class);
+    Route::resource('contents', ContentController::class);
 });
 
 require __DIR__.'/auth.php';

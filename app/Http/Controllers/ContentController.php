@@ -8,6 +8,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\View\View;
+use Inertia\Inertia;
 use App\Http\Requests\ContentRequest;
 use App\Models\Content;
 
@@ -16,18 +17,20 @@ class ContentController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index()
     {
-        $contents = Content::with(['user'])->get();;
-        return view('contents.index', compact('contents'));
+        $contents = Content::with(['createdBy'])->get();
+        return Inertia::render('Contents/Index', [
+            'contents' => $contents
+        ]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): View
+    public function create()
     {
-        return view('contents.create');
+        return Inertia::render('Contents/Create');
     }
 
     /**
@@ -47,17 +50,21 @@ class ContentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Content $content): View
+    public function show(Content $content)
     {
-        return view('contents.show', compact('content'));
+        return Inertia::render('Contents/Show', [
+            'content' => $content
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Content $content): View
+    public function edit(Content $content)
     {
-        return view('contents.edit', compact(['content']));
+        return Inertia::render('Contents/Edit', [
+            'content' => $content
+        ]);
     }
 
     /**

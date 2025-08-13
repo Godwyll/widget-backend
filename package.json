@@ -27,6 +27,7 @@
         "vite": "^7.1.1"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^7.0.0",
         "@inertiajs/react": "2.0",
         "react-data-table-component": "^7.7.0"
     }
