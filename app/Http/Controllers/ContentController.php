@@ -39,7 +39,9 @@ class ContentController extends Controller
     public function store(ContentRequest $request): RedirectResponse
     {
         try {
-            Content::create($request->validated());
+            $content = $request->validated();
+            $content['created_by'] = auth()->user()->id;
+            Content::create($content);
             session()->flash('success', 'Content created successfully.');
         } catch (\Throwable $th) {
             session()->flash('error', 'Sorry, something went wrong.');

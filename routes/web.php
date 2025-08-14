@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ResponseController;
+use App\Http\Controllers\SessionController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -34,6 +36,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // User management routes
     Route::resource('users', UserController::class);
     Route::resource('contents', ContentController::class);
+    Route::resource('responses', ResponseController::class)->only(['index', 'destroy']);
+    Route::delete('sessions/{session}', [SessionController::class, 'destroy'])->name('sessions.destroy');
 });
 
 require __DIR__.'/auth.php';

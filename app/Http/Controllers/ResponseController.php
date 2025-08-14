@@ -7,71 +7,31 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\View\View;
+use Inertia\Inertia;
+use Inertia\Response as InertiaResponse;
 use App\Http\Requests\ResponseRequest;
 use App\Models\Response;
+use App\Models\Session;
 
 class ResponseController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index(): InertiaResponse
     {
-        $responses = Response::with(['question', 'session', 'option'])->get();
-        return view('responses.index', compact('responses'));
-    }
+        $sessions = Session::with([
+            'content',
+            'responses' => function($q){
+                $q->with(['question', 'option'])->latest();
+            }
+        ])->latest()->get()->sortByDesc(function($session) {
+            return $session->created_at ?? '';
+        });
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create(): View
-    {
-        return view('responses.create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(ResponseRequest $request): RedirectResponse
-    {
-        try {
-            Response::create($request->validated());
-            session()->flash('success', 'Response created successfully.');
-        } catch (\Throwable $th) {
-            session()->flash('error', 'Sorry, something went wrong.');
-        }
-        return redirect()->route('responses.index');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Response $response): View
-    {
-        return view('responses.show', compact('response'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Response $response): View
-    {
-        return view('responses.edit', compact(['response']));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(ResponseRequest $request, Response $response): RedirectResponse
-    {
-        try {
-            $response->update($request->validated());
-            session()->flash('success', 'Response updated successfully.');
-        } catch (\Throwable $th) {
-            session()->flash('error', 'Sorry, something went wrong.');
-        }
-        return redirect()->route('responses.index');
+        return Inertia::render('Responses/Index', [
+            'sessions' => $sessions,
+        ]);
     }
 
     /**

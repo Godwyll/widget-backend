@@ -16,6 +16,35 @@ export interface Content {
     created_by: User;
 }
 
+export interface Question {
+    id: number;
+    body: string;
+}
+
+export interface Option {
+    id: number;
+    label?: string;
+    body?: string;
+}
+
+export interface Response {
+    id: number;
+    question: Question | null;
+    option: Option | null;
+    body: string | null;
+    created_at: string;
+}
+
+export interface Session {
+    id: number;
+    ip_address: string | null;
+    user_agent: string | null;
+    url: string | null;
+    responses: Response[];
+    content?: Pick<Content, 'id' | 'title' | 'type'> | null;
+    created_at?: string;
+}
+
 export type PageProps<T extends Record<string, unknown> = Record<string, unknown>> = T & {
     auth: {
         user: User;

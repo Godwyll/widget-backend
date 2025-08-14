@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('sessions', function (Blueprint $table) {
             $table->id();
             $table->ipAddress('ip_address')->nullable();
+            $table->string('user_agent')->nullable();
+            $table->string('url')->nullable();
+            $table->string('content_id')->nullable();
             $table->timestamps();
         });
     }

@@ -27,20 +27,20 @@ class ResponseSeeder extends Seeder
             ['question_id' => 3, 'session_id' => 2, 'body' => 'Yes I use 2-step verification'],
 
             // What do you do when you receive an email with a link or document?
-            ['question_id' => 4, 'session_id' => 1, 'option_id' => 1],
-            ['question_id' => 4, 'session_id' => 2, 'option_id' => 2],
+            ['question_id' => 4, 'session_id' => 1, 'body' => 'I click on it.'],
+            ['question_id' => 4, 'session_id' => 2, 'body' => 'I open in a private window.'],
 
             // What would be your first approach if you sense a security breach?
-            ['question_id' => 5, 'session_id' => 1, 'option_id' => 1],
-            ['question_id' => 5, 'session_id' => 2, 'option_id' => 2],
+            ['question_id' => 5, 'session_id' => 1, 'body' => 'I would report it to the IT department.'],
+            ['question_id' => 5, 'session_id' => 2, 'body' => 'I would report it to the IT department.'],
 
             // Who is responsible for installing and maintaining security software on your computer?
-            ['question_id' => 6, 'session_id' => 1, 'option_id' => 1],
-            ['question_id' => 6, 'session_id' => 2, 'option_id' => 2],
+            ['question_id' => 6, 'session_id' => 1, 'body' => 'Myself.'],
+            ['question_id' => 6, 'session_id' => 2, 'body' => 'The IT department.'],
 
             // How often do you use Windows Update?
-            ['question_id' => 7, 'session_id' => 1, 'option_id' => 1],
-            ['question_id' => 7, 'session_id' => 2, 'option_id' => 2],
+            ['question_id' => 7, 'session_id' => 1, 'body' => 'I have automatic updates enabled.'],
+            ['question_id' => 7, 'session_id' => 2, 'body' => 'I use Windows Update frequently.'],
 
             // Do you have anti-virus software installed on your computer?
             ['question_id' => 8, 'session_id' => 1, 'option_id' => 1],

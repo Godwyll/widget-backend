@@ -12,7 +12,6 @@ class ContentRequest extends BaseFormRequest
     public function store(): array
     {
         return [
-            'user_id' => 'required|integer|exists:users,id',
             'type' => 'required|string',
             'title' => 'required|string',
             'body' => 'nullable|string',
@@ -28,7 +27,6 @@ class ContentRequest extends BaseFormRequest
     public function update(): array
     {
         return [
-            'user_id' => 'required|integer|exists:users,id',
             'type' => 'required|string',
             'title' => 'required|string',
             'body' => 'nullable|string',
