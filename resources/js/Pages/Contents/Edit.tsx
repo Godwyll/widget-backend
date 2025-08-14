@@ -19,29 +19,31 @@ export default function Edit({ content, onClose }: PageProps<{ content: Content 
     return (
         <form onSubmit={handleSubmit} className="space-y-6 p-6">
             <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight mb-4">Edit Content</h2>
-            <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Type <span className="text-red-500">*</span></label>
-                <select
-                    value={data.type}
-                    onChange={e => setData('type', e.target.value as Content['type'])}
-                    className="mt-1 block w-full rounded-md border-gray-300 dark:bg-gray-700 dark:text-gray-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                    required
-                >
-                    <option value="tip">Tip</option>
-                    <option value="survey">Survey</option>
-                </select>
-                {errors.type && <div className="text-red-500 text-xs mt-1">{errors.type}</div>}
-            </div>
-            <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Title <span className="text-red-500">*</span></label>
-                <input
-                    type="text"
-                    value={data.title}
-                    onChange={e => setData('title', e.target.value)}
-                    className="mt-1 block w-full rounded-md border-gray-300 dark:bg-gray-700 dark:text-gray-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                    required
-                />
-                {errors.title && <div className="text-red-500 text-xs mt-1">{errors.title}</div>}
+            <div className="grid grid-cols-1 md:grid-cols-10 gap-4">
+                <div className="md:col-span-3">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Type <span className="text-red-500">*</span></label>
+                    <select
+                        value={data.type}
+                        onChange={e => setData('type', e.target.value as Content['type'])}
+                        className="mt-1 block w-full rounded-md border-gray-300 dark:bg-gray-700 dark:text-gray-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        required
+                    >
+                        <option value="tip">Tip</option>
+                        <option value="survey">Survey</option>
+                    </select>
+                    {errors.type && <div className="text-red-500 text-xs mt-1">{errors.type}</div>}
+                </div>
+                <div className="md:col-span-7 min-w-0">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Title <span className="text-red-500">*</span></label>
+                    <input
+                        type="text"
+                        value={data.title}
+                        onChange={e => setData('title', e.target.value)}
+                        className="mt-1 block w-full rounded-md border-gray-300 dark:bg-gray-700 dark:text-gray-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        required
+                    />
+                    {errors.title && <div className="text-red-500 text-xs mt-1">{errors.title}</div>}
+                </div>
             </div>
             <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Description <span className="text-red-500">*</span></label>
