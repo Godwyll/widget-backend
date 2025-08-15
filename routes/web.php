@@ -5,9 +5,14 @@ use App\Http\Controllers\ContentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ResponseController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Models\Content;
+use App\Models\Session;
+use App\Models\Response;
+use Illuminate\Support\Facades\DB;
 
 // Home route
 Route::get('/', fn () =>
@@ -20,9 +25,7 @@ Route::get('/', fn () =>
 );
 
 // Dashboard route
-Route::get('dashboard', fn () =>
-    Inertia::render('Dashboard')
-)->name('dashboard');
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 // Authenticated and verified routes
 Route::middleware(['auth', 'verified'])->group(function () {
